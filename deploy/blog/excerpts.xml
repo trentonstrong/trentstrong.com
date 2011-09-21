@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog excerpts feed    </title>
+        <link href="blog/excerpts.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-11T20:23:20Z</updated>
+
+    <id>/blog/excerpts.xml/</id>
+
+            <entry>
+            <title type="html">Where do you store your Django signals?</title>
+            <author><name>Trent Strong</name></author>
+            <link href="/blog/2011/django-signals.html"/>
+            <updated>2011-03-01T10:00:00Z</updated>
+            <published>2011-03-01T10:00:00Z</published>
+            <id>/blog/2011/django-signals.html</id>
+                        <category   scheme="/blog/tags"
+                        term="django"
+                        label="Django" />
+            
+            <content type="html">
+                
+                &lt;p&gt;If you&amp;#8217;re using Django to build your web application, more often than not there
+is already a convention for organizing your modules and packages.  A typical
+Django application is structured something like&amp;nbsp;this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;project/
+    __init__.py
+    app1/
+        __init__.py
+        forms.py
+        models.py
+        views.py
+        signals.py
+        utils.py
+        urls.py
+    app2/
+        ...
+    templates/
+    settings.py
+    urls.py
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And so forth.  Overall, this structure is pretty manageable, though minor
+deviations are&amp;nbsp;common.&lt;/p&gt;
+&lt;p&gt;If there is significant interaction between your various relational models,
+we often run into the requirement of performing an action based on an event
+related to a model, such as a &amp;#8220;save&amp;#8221; event.  Keeping these actions decoupled
+from the actual model is a textbook example where the &lt;em&gt;Observer&lt;/em&gt; pattern
+comes in handy.  This is exactly what Django&amp;#8217;s signals infrastructure aims to&amp;nbsp;provide.&lt;/p&gt;
+&lt;p&gt;As detailed in the example above, the typical placement of signal handlers related to an
+application&amp;#8217;s models is in the application package itself, in a module aptly
+named&amp;nbsp;&amp;#8220;signals&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;The same reasoning that pulls your actions out of model save methods can be applied to your handlers.
+As your application grows in complexity it also tends to happen that your signal handlers begin to
+interact with models from several different applications.  In this case it is
+not completely clear (at least to me) where the signals should live, and since signal logic
+is by definition decoupled from the models there are few clues to let us know what handlers
+a model&amp;#8217;s event might trigger since we can only associate a single application
+with a signal&amp;nbsp;handler.&lt;/p&gt;
+&lt;p&gt;The structure I&amp;#8217;m experimenting with right now is to create a single signals
+package underneath the project package to organize all signals code.  I can then
+add as many modules to the signals package as I like, with informative names 
+like &amp;#8220;user_signals&amp;#8221; or &amp;#8220;sluggable_model_signals&amp;#8221;.  The file structure of the
+signals package looks&amp;nbsp;like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;signals/
+    __init__.py
+    user_signals.py
+    sluggable_model_signals.py
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Signals/&lt;strong&gt;init&lt;/strong&gt;.py is defined&amp;nbsp;as:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&#34;&#34;&#34; Module for registering centralized signals &#34;&#34;&#34;
+
+__all__ = [
+    &#39;user_signals&#39;,
+    &#39;sluggable_model_signals&#39;,
+    ]
+
+from example.signals import *
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;strong&gt;all&lt;/strong&gt; keyword makes sure the modules can be imported using the &amp;#8220;import*&amp;#8221;
+functionality.  Finally, the example.signals package is added to INSTALLED_APPS,
+before any of our defined applications to ensure the signals are included only
+once and early enough to register&amp;nbsp;properly.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">A Sad Post</title>
+            <author><name>Trent Strong</name></author>
+            <link href="/blog/sad-post.html"/>
+            <updated>2010-12-01T10:00:00Z</updated>
+            <published>2010-12-01T10:00:00Z</published>
+            <id>/blog/sad-post.html</id>
+                        <category   scheme="/blog/tags"
+                        term="sad"
+                        label="Sad" />
+                        <category   scheme="/blog/tags"
+                        term="thoughts"
+                        label="Thoughts" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;A Dark Image&#34; src=&#34;/media/images/dark.png&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;I went and dressed sadly. It will show you pretty well how pipped I was when I
+tell you that I near as a toucher put on a white tie with a dinner-jacket. I
+sallied out for a bit of food more to pass the time than because I wanted it.
+It seemed brutal to be wading into the bill of fare with poor old Bicky headed
+for the&amp;nbsp;breadline.&lt;/p&gt;            </content>
+        </entry>
+    </feed>
