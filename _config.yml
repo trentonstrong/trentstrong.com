@@ -1,0 +1,6 @@
+server: true
+port: 8000
+auto: true
+pygments: true
+exclude:
+  - README.md
