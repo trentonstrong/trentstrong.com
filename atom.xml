@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Trent Strong | Bacon, Eggs, and Coffee</title>
+ <link href="http://trentstrong.com/atom.xml" rel="self"/>
+ <link href="http://trentstrong.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://trentstrong.com/</id>
+ <author>
+   <name>Trent Strong</name>
+   <email>trenton.strong@gmail.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title | xml_escape }}</title>
+   <link href="http://trentstrong.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://trentstrong.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>

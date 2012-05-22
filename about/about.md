@@ -1,17 +1,20 @@
 ---
 layout: about
-title: About Trent Strong
+title: About
+active: about
 ---
 <h1>About <a href="url fn">Trent Strong</a></h1>
 
-I am currently a <span class="role">software engineer</span> living in <span class="locality">Los Angeles</span>. 
+I am currently a <span class="role">software engineer</span> living in <span class="locality">Los Angeles</span>.
+
+<img src="/images/profile.jpg" style="float: right;" width="300" height="393" title="photo profile" />
 
 Computers &mdash; and at some point, the internet &mdash; have been a part of my life since I was really young.  
-I was drawn into the fold by the mystique of pointers, the radix sort, attempting to build a MUD <sup id="reference-1">[1][]</sup> and checking out the Doom source<sup id="reference-2">[2][]</sup> at
+I was drawn into the fold by the mystique of pointers, the radix sort, attempting to build a MUD <sup id="reference-1"><a href="#footnote-1">1</a></sup> and checking out the Doom source<sup id="reference-2"><a href="#footnote-2">2</a></sup> at
 some point in junior high.  As luck would have it, my high school also had great labs for basic analog and digital electronics,
 which eventually led me into electrical engineering and then to physics at Texas A&amp;M. 
 
-Before I decided to build things every day, I did graduate research in high energy physics.  I focused mainly on trying to make sense of the particles flying away from the [Quark-Gluon Plasma][] using computer simulation, lots of math, and pretty much everything but the kitchen sink. 
+Before I decided to build things every day, I did graduate research in high energy physics.  I focused mainly on trying to make sense of the particles flying away from the <a href="http://en.wikipedia.org/wiki/Quark%E2%80%93gluon_plasma">Quark Gluon Plasma</a> using computer simulation, lots of math, and pretty much everything but the kitchen sink. 
 
 I am a firm believer in the power of neuroplasticity.  From my limited experience it seems that learning new things that are orthogonal to what you already know
 has the strange side-effect of making you a stronger thinker on all fronts.  On that note, I would consider myself an aspiring generalist. 
@@ -42,7 +45,3 @@ Languages I have a soft spot for:
     <li id="footnote-1">Read: playing a heck of a lot of them</li>
     <li id="footnote-2">Thanks <a href="http://idsoftware.com">id</a></li>
 </ol>
-
-[Quark-Gluon Plasma]: http://en.wikipedia.org/wiki/Quark%E2%80%93gluon_plasma
-[1]: #footnote-1
-[2]: #footnote-2

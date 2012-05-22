@@ -8,14 +8,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Bacon, Eggs, and Coffee | Trent Strong | {{ page.title }}</title>
+  <title>Trent Strong - Bacon, Eggs, and Coffee - {{ page.title }}</title>
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/syntax.css">
-    <script src="/js/libs/modernizr-1.7.min.js"></script>
+  <link href="atom.xml" type="application/atom+xml" rel="alternate" title="trentstrong.com feed" />
+  <script src="/js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body>
-  <div id="container">
+  <div class="container">
       <div id="main" role="main">
           <header class="banner clearfix">
           <div class="top-bar-container">
@@ -23,10 +25,13 @@
           <div class="top-bar">
 	    <nav class="main-nav">
 	      <ul>
-		<li><a title="home" href="/">Home</a>
-		<li><a title="blog" href="/blog/">Blog</a>
-		<li><a title="projects" href="/projects/">Projects</a>
-		<li><a title="about" href="/about.html">About</a>
+        <li><a id="home" title="home" href="/">
+          Home</a>
+        <li><a id="blog" title="blog" href="/blog/">Blog</a>
+        <li><a id="projects" title="projects" href="/projects/">Projects</a>
+        <li><a id="about" title="about" href="/about/">About</a>
+        <li><a title="Atom Feed" href="/atom.xml">
+            <img src="http://www.mozilla.org/images/feed-icon-14x14.png"></a>
 	      </ul>
 	    </nav>
           </div>
@@ -37,6 +42,7 @@
                 Eggs,<br />
                 and Coffee</h1>
             </a>
+            <em>"On your radio, blowing out your watts"</em>
           </div>
           </header>
           <section class="content">{{ content }}</section>
@@ -53,6 +59,10 @@
     <script src="js/libs/dd_belatedpng.js"></script>
     <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
   <![endif]-->
+
+  <script>
+    $('#{{ page.active }}').addClass('active');
+  </script>
 
   {% include analytics.html %}
 </body>
