@@ -18,7 +18,7 @@ Before I decided to build things every day, I did graduate research in high ener
 I am a firm believer in the power of neuroplasticity.  From my limited experience it seems that learning new concepts that are orthogonal to what you already know
 has the strange side-effect of making you stronger on all fronts.  On that note, I would consider myself an aspiring generalist. 
 
-You can always reach me by <a class="email" href="mailto:trenton.strong@gmail.com">email</a> or <a href="xmpp:trenton.strong@jabber.org">Jabber</a>.
+You can always reach me by <a class="email" href="mailto:trenton.strong@gmail.com">email</a>, <a href="xmpp:trenton.strong@jabber.org">Jabber</a> or <a href="http://twitter.com/trentonstrong">Twitter</a>.
 
 Interests (in wildly fluctuating order):
 -----------------------------------

@@ -48,6 +48,7 @@ body{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
     padding: 0;
     margin: 0;
+    background: #fff url('/coffee-bg.gif');
 }
 
 pre {
@@ -68,6 +69,7 @@ sup {
 
 
 .container{
+    background: #fff;
         width: 940px;
          margin: 32px auto;
          padding: 12px;

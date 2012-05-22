@@ -4,6 +4,7 @@ title: Using Redis SORT and GET to save on roundtrips
 categories:
     - programming
     - redis
+permalink: /blog/2011/using-redis-sort-get-save-roundstrips.html
 ---
 A common pattern when storing more complex data in [Redis](http://redis.io) is to use plain strings or hashes to store a representation of some data object,
 and then store references to those keys in Redis' other data structures (lists, sets, and sorted sets).  A contrived example might look like this:
